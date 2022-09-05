@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012-1-4 12:55:27 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.sw.bi.scheduler.model.ScheduleSystemStatus" table="schedule_system_status" >
+        <id name="scheduleSystemStatusId" type="java.lang.Long">
+            <column name="schedule_system_status_id" />
+            <generator class="increment" />
+        </id>
+        <property name="status" type="int">
+            <column name="status" not-null="true" />
+        </property>
+        <property name="referToJobLevel" type="int">
+            <column name="refer_to_job_level" not-null="true" />
+        </property>
+        <property name="needBalance" type="int">
+            <column name="need_balance" not-null="true" />
+        </property>
+        <property name="taskRunningPriority" type="int">
+            <column name="task_running_priority" not-null="true" />
+        </property>
+        <property name="referPointRandom" type="int">
+            <column name="refer_point_random" not-null="true" />
+        </property>
+        <property name="taskFailReturnTimes" type="int">
+            <column name="task_fail_return_times" not-null="true" />
+        </property>
+        <property name="gateway" type="string">
+            <column name="gateway" length="20" not-null="true" />
+        </property>
+        <property name="taskRunningMax" type="int">
+            <column name="task_running_max" />
+        </property>
+        <property name="waitUpdateStatusTaskCount" type="int">
+            <column name="wait_update_status_task_count" />
+        </property>
+        <property name="taskCountExceptJobs" type="string">
+            <column name="task_count_except_jobids" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" not-null="true" />
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="update_time" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

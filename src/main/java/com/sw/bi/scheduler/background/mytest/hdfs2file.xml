@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<job readConcurrency="10" writeConcurrency="10"
+	errorThreshold="100">
+	<source>
+		<plugin
+			className="com.shunwang.datasync.plugins.RCFilePlugin">
+			<dataPath path="/group/user/root/temp/hdfs2mysql/"
+				dynamicPathResolvor="com.shunwang.datasync.path.resolvors.HdfsPathResolvor">
+				<property key="disable.recursive" value="false" />
+			</dataPath>
+			<property key="fs.default.name" value="hdfs://namenode:50001" />
+			<property key="ignored.columns" value="" />
+		</plugin>
+	</source>
+        <target>
+          <plugin className="com.shunwang.datasync.plugins.FilePlugin">
+                        <dataPath path="/root/testdata3/"
+                                dynamicPathResolvor="com.shunwang.datasync.path.resolvors.DirectoryPathResolvor">
+                                <property key="disable.recursive" value="true" />
+                                <property key="validator.regex" value="" />
+                        </dataPath>
+                        <property key="charset.encoding" value="gbk" />
+                        <property key="column.limit" value="3" />
+                        <property key="ignored.columns" value="" />
+                        <property key="write.delimiter" value="$" />
+                        <property key="buffer.size" value="" />
+           </plugin>
+       </target>
+
+
+
+</job>

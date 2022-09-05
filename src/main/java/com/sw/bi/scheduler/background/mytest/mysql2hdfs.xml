@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<job readConcurrency="10" writeConcurrency="10"
+    errorThreshold="100">
+    <source>
+        <plugin className="com.shunwang.datasync.plugins.DBPlugin">
+            <dataPath path="select aa,bb,cc from test.test1"/>
+            <property key="user" value="hive_user" />
+            <property key="password"
+                value="25E3AE7135718FF6" />
+            <property key="charset.encoding" value="GBK" />
+            <property key="pre.processing.sql" value="" />
+            <property key="post.processing.sql" value="" />
+            <property key="connection.string" value="jdbc:mysql://192.168.181.96:3306/test?yearIsDateType=false&amp;useUnicode=true&amp;characterEncoding=utf-8" />
+            <property key="driver.string"
+                value="com.mysql.jdbc.Driver" />
+            <property key="commit.threshold" value="2000" />
+        </plugin>
+    </source>
+    <target>
+        <plugin
+            className="com.shunwang.datasync.plugins.RCFilePlugin">
+            <dataPath path="/group/user/root/mysql2hdfs/2011/07/21/"
+                dynamicPathResolvor="com.shunwang.datasync.path.resolvors.HdfsPathResolvor">
+                <property key="disable.recursive" value="false" />
+            </dataPath>
+            <property key="fs.default.name" value="hdfs://namenode:50001" />
+            <property key="charset.encoding" value="UTF-8" />
+            <property key="column.count" value="3" />
+            <property key="codec.class"
+                value="org.apache.hadoop.io.compress.GzipCodec" />
+        </plugin>
+    </target>
+    <property key="plugin.coordinator"
+        value="com.shunwang.datasync.plugins.DBPluginCoordinator" />
+</job>
+

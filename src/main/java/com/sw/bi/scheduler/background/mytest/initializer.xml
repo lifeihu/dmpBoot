@@ -1,0 +1,7 @@
+   <jobInitializer  className="com.shunwang.datasync.operator.DBProcessor">
+         <property key="sql" value="${sql}" />
+         <property key="driver.string" value="${driver}" />
+         <property key="connection.string" value="${connectionString}" />
+         <property key="user" value="${username}" />
+         <property key="password" value="${password}" />
+   </jobInitializer>

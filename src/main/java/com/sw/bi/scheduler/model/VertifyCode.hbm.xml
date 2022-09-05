@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012-4-25 12:35:27 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.sw.bi.scheduler.model.VertifyCode" table="lgn_vertify_code">
+        <id name="vertifyCodeId" type="java.lang.Long" column="vertify_code_id">
+            <generator class="increment" />
+        </id>
+        
+        <property name="mobile" type="string" column="mobile" length="15" not-null="true" />
+        <property name="code" type="string" column="code" length="6" not-null="true" />
+        <property name="username" type="string" column="username" length="50" not-null="true" />
+        <property name="useTimes" type="int" column="use_times" />
+        <property name="createTime" type="timestamp" column="create_time" not-null="true" />
+        <property name="updateTime" type="timestamp" column="update_time"/>
+    </class>
+</hibernate-mapping>

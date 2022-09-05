@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012-2-2 13:44:08 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.sw.bi.scheduler.model.EtlCleanConfig" table="etl_clean_config">
+        <id name="etlCleanConfigId" type="java.lang.Long">
+            <column name="etl_clean_config_id" />
+            <generator class="increment" />
+        </id>
+        <property name="tableName" type="string">
+            <column name="table_name" length="255" not-null="true" unique="true" />
+        </property>
+        <property name="partitionName" type="string">
+            <column name="partition_name" not-null="true" />
+        </property>
+        <property name="partitionType" type="string">
+            <column name="partition_type" not-null="true" />
+        </property>
+        <property name="applyMan" type="long">
+            <column name="apply_man" not-null="true" />
+        </property>
+        <property name="keepDays" type="int">
+            <column name="keep_days" not-null="true" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" not-null="true" />
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="update_time" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

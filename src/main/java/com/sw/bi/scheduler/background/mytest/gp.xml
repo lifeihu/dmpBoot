@@ -1,0 +1,13 @@
+        <plugin className="com.shunwang.datasync.plugins.GreenplumPlugin">
+            <dataPath path="${datapath}"/>
+            <property key="user" value="${username}" />
+            <property key="password" value="${password}" />
+            <property key="charset.encoding" value="${charset}" />
+            <property key="pre.processing.sql" value="" />
+            <property key="post.processing.sql" value="" />
+            <property key="connection.string" value="${connectionString}" />
+            <property key="driver.string"  value="org.postgresql.Driver" />
+            <property key="commit.threshold" value="${commitThreshold}" />
+            <property key="writer.escape" value="${escape}" />
+            <property key="column.count" value="${columns}" />
+        </plugin>

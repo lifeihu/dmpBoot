@@ -1,0 +1,81 @@
+.menu-task24 {background-image:url(../images/icons/menu/task24.png) !important;}
+.menu-task224 {background-image:url(../images/icons/menu/task224.png) !important;}
+.menu-job24 {background-image:url(../images/icons/menu/job24.png) !important;}
+.menu-statistics24 {background-image:url(../images/icons/menu/statistics24.png) !important;}
+.menu-history24 {background-image:url(../images/icons/menu/history24.png) !important;}
+.menu-settings24 {background-image:url(../images/icons/menu/settings24.png) !important;}
+.menu-datasource24 {background-image:url(../images/icons/menu/datasource24.png) !important;}
+.menu-weight24 {background-image:url(../images/icons/menu/weight24.png) !important;}
+.menu-alarm24 {background-image:url(../images/icons/menu/alarm24.png) !important;}
+.menu-toolbox24 {background-image:url(../images/icons/menu/toolbox24.png) !important;}
+.menu-hadoop24 {background-image:url(../images/icons/menu/hadoop24.png) !important;}
+.menu-password24 {background-image:url(../images/icons/menu/password24.png) !important;}
+.menu-servergroup24 {background-image:url(../images/icons/menu/servergroup24.png) !important;}
+.menu-log24 {background-image:url(../images/icons/menu/log24.png) !important;}
+.menu-exit24 {background-image:url(../images/icons/menu/exit24.png) !important;}
+
+.menu-user {background-image:url(../images/icons/menu/user.png) !important;}
+.menu-resources {background-image:url(../images/icons/menu/resources.png) !important;}
+
+.add, .x-action-col-add {background-image:url(../images/icons/page_add.png) !important;}
+.view {background-image:url(../images/icons/page.png) !important;}
+.edit {background-image:url(../images/icons/page_edit.png) !important;}
+.copy {background-image:url(../images/icons/page_copy.png) !important;}
+.remove {background-image:url(../images/icons/page_delete.png) !important;}
+.recovery {background-image:url(../images/icons/recovery.png) !important;}
+.save {background-image:url(../images/icons/page_save.png) !important;}
+.close {background-image:url(../images/icons/page_close.gif) !important;}
+.ok {background-image:url(../images/icons/page_ok.gif) !important;}
+.refresh {background-image:url(../images/icons/refresh.gif) !important;}
+.loading {background-image:url(../images/icons/loading.gif) !important;}
+.import {background-image:url(../images/icons/page_import.png) !important;}
+.template {background-image:url(../images/icons/template.png) !important;}
+.report {background-image:url(../images/icons/report.png) !important;}
+.new {background-image:url(../images/icons/new.png) !important;}
+.switch {background-image:url(../images/icons/switch.png) !important;}
+.maintain {background-image:url(../images/icons/maintain.png) !important;}
+.form {background-image:url(../images/icons/form-browse.png) !important;}
+.up {background-image:url(../images/icons/arrow-up.png) !important;}
+.down {background-image:url(../images/icons/arrow-down.png) !important;}
+.sort {background-image:url(../images/icons/sort.png) !important;}
+.search {background-image:url(../images/icons/search.png) !important;}
+.cancel {background-image:url(../images/icons/file-cancel.png) !important;}
+.weight {background-image:url(../images/icons/weight.png) !important;}
+.reset-password {background-image:url(../images/icons/reset-password.png) !important;}
+.children-job {background-image:url(../images/icons/children_job.png) !important;}
+.hudson {background-image:url(../images/icons/hudson.png) !important;}
+.alarm {background-image:url(../images/icons/alarm.png) !important;}
+.publish {background-image:url(../images/icons/publish.png) !important;}
+.user-group {background-image:url(../images/icons/user-group.png) !important;}
+
+.drive-file {background-image:url(../images/icons/drive_magnify.png) !important;}
+.drive-web {background-image:url(../images/icons/drive_web.png) !important;}
+
+.user-add {background-image: url(../images/icons/user_add.png) !important;}
+.user-edit {background-image: url(../images/icons/user_edit.png) !important;}
+.user-remove {background-image: url(../images/icons/user_delete.png) !important;}
+
+.role-add {background-image: url(../images/icons/role_add.png) !important;}
+.role-edit {background-image: url(../images/icons/role_edit.png) !important;}
+.role-remove {background-image: url(../images/icons/role_delete.png) !important;}
+
+.org-add {background-image: url(../images/icons/org_add.png) !important;}
+.org-edit {background-image: url(../images/icons/org_edit.png) !important;}
+.org-remove {background-image: url(../images/icons/org_delete.png) !important;}
+
+.table-add {background-image:url(../images/icons/table_add.png) !important;}
+.table-remove {background-image:url(../images/icons/table_delete.png) !important;}
+
+.log {background-image:url(../images/icons/log.png) !important;}
+.redo {background-image:url(../images/icons/redo.png) !important;}
+.supply {background-image:url(../images/icons/supply.png) !important;}
+
+.online {background:url(../images/icons/online.png) 2px 2px !important;}
+.offline {background:url(../images/icons/offline.png) 2px 2px !important;}
+.unline {background:url(../images/icons/unline.png) 2px 2px !important;}
+
+.zoom-out {background:url(../images/icons/zoom-out.png) !important;}
+.zoom-in {background:url(../images/icons/zoom-in.png) !important;}
+.zoom-fit {background:url(../images/icons/zoom-fit.png) !important;}
+
+.execute {background-image:url(../images/icons/execute.png) !important;}

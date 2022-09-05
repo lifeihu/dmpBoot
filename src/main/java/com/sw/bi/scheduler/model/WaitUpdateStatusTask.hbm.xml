@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012-1-9 10:47:01 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.sw.bi.scheduler.model.WaitUpdateStatusTask" table="wait_update_status_task">
+        <id name="waitUpdateStatusTaskId" type="java.lang.Long">
+            <column name="wait_update_status_task_id" />
+            <generator class="increment" />
+        </id>
+        <property name="scanDate" type="date">
+            <column name="scan_date" length="10" not-null="true" />
+        </property>
+        <property name="taskDate" type="date">
+            <column name="task_date" length="10" not-null="true" />
+        </property>
+        <property name="taskId" type="long">
+            <column name="task_id" not-null="true" />
+        </property>
+        <property name="flag" type="int">
+            <column name="flag" />
+        </property>
+        <property name="jobId" type="java.lang.Long">
+            <column name="job_id" />
+        </property>
+        <property name="taskName" type="string">
+            <column name="task_name" length="100" />
+        </property>
+        <property name="settingTime" type="timestamp">
+            <column name="setting_time" />
+        </property>
+        <property name="active" type="boolean">
+        	<column name="active" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" />
+        </property>
+        <property name="scanTime" type="timestamp">
+            <column name="scan_time" />
+        </property>
+        <property name="scanTimes" type="int">
+            <column name="scan_times" />
+        </property>
+        <property name="serial" type="boolean">
+            <column name="serial" />
+        </property>
+    </class>
+</hibernate-mapping>

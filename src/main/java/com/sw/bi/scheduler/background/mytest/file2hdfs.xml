@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<job readConcurrency="10" writeConcurrency="10"
+    errorThreshold="100">
+    <source>
+          <plugin className="com.shunwang.datasync.plugins.FilePlugin">
+                        <dataPath path="/root/testdata/"
+                                dynamicPathResolvor="com.shunwang.datasync.path.resolvors.DirectoryPathResolvor">
+                                <property key="disable.recursive" value="true" />
+                                <property key="validator.regex" value="" />
+                        </dataPath>
+                        <property key="charset.encoding" value="gbk" />
+                        <property key="column.limit" value="3" />
+                        <property key="ignored.columns" value="" />
+                        <property key="read.delimiter" value="$" />
+                        <property key="buffer.size" value="" />
+           </plugin>
+    </source>
+    <target>
+        <plugin
+            className="com.shunwang.datasync.plugins.RCFilePlugin">
+            <dataPath path="/group/user/root/temp/hdfs2mysql/${date_desc}/data.log" />
+            <property key="fs.default.name" value="hdfs://namenode:50001" />
+            <property key="charset.encoding" value="UTF-8" />
+            <property key="column.count" value="3" />
+            <property key="codec.class"
+                value="org.apache.hadoop.io.compress.GzipCodec" />
+        </plugin>
+    </target>
+    <property key="plugin.coordinator"
+        value="com.shunwang.datasync.plugins.DBPluginCoordinator" />
+</job>
+

@@ -1,0 +1,73 @@
+body, div, span, td {font-family: 宋体;font-size: 12px;}
+
+.x-selectable, .x-selectable * {-moz-user-select: text!important;-khtml-user-select: text!important;}
+
+.x-pivotgrid .x-grid3-header-offset table td {font-family:宋体;font-size:12px;}
+.x-pivotgrid .x-grid3-row-headers table td {font-family:宋体;font-size:12px;}
+.x-grid3-header-title {font-family:宋体;font-size:12px;}
+.x-panel-reset .x-panel-body samp {font-family:宋体;font-size:12px;}
+.x-box-mc {font-family:宋体;}
+#x-debug-browser .x-tree .x-tree-node a span {font-family:宋体;font-size:12px;}
+.x-panel-header {font-family:宋体;font-size:12px;}
+.x-btn button {font-family:宋体;font-size:12px;}
+
+.x-item-disabled {color: #aaa;}
+.x-item-disabled * {color: #aaa !important;}
+
+/*.application-header {position:relative; margin-right:160px;}
+.application-header .application-name {float:left;font-size: 26px;font-weight:bold;font-family: 黑体;margin-right:20px;}
+.application-header .login-info {margin-right: 50px;}
+.application-header .login-info b {font-size: 14px;color:#76ae00;}*/
+.application-header{ line-height:62px; padding-right:50px; font-size:14px; color:#fff;}
+.application-header em{ margin:0 10px;}
+
+.x-form-field-wrap .x-form-attachment-trigger, .x-form-field-wrap .x-form-image-viewer-trigger {cursor:pointer;}
+.x-form-field-wrap .x-form-attachment-trigger {background-image: url(../ext/images/default/form/attachment-trigger.gif);}
+.x-form-field-wrap .x-form-image-viewer-trigger {background-image: url(../ext/images/default/form/image-viewer-trigger.gif);}
+
+.x-customcolumn-cell-icon {background-repeat:no-repeat;background-position: 2px;cursor:pointer;}
+.x-customcolumn-cell-icon div {padding-left:20px;}
+
+.x-customcolumn-cell-link {color:blue;cursor:pointer;}
+
+.invalid-error-list {font-size: 12px;position: absolute;z-index: 9999;border: 1px solid #666;background: #ffa;padding: 5px 10px;margin-right: 10px;color: #999;width: 270px;}
+.invalid-error-list li {cursor: pointer;list-style: decimal outside;margin: 5px 5px 5px 25px;}
+.invalid-error-list li a {color: #15428B;text-decoration: none;}
+.invalid-error-list li a:hover {text-decoration: underline;}
+.invalid-error-list li a span.fieldLabel {color: #15428B;font-weight:bold;}
+
+.x-multi-check {height: 13px;width: 13px;background: url('../ext/images/default/form/checkbox.gif') no-repeat 0 0;}
+.x-multi-check-checked {background-position:-13px -13px;}
+
+.x-record-unactive, .x-record-unactive a span {color: #bbb; text-decoration: line-through;}
+
+.notice-msg .x-box-mc { text-align: left; }
+.x-notice-icon { background-repeat: no-repeat; padding-left: 20px; padding-bottom: 8px;}
+.x-notice-msg { padding-left: 20px; line-height: 18px; vertical-align: middle; }
+.notice-msg h3.icon-status-warning { background-image: url(../images/icons/notice-warning.png) !important; color: orange; }
+.notice-msg h3.icon-status-error { background-image: url(../images/icons/notice-error.png) !important; color: red; }
+.notice-msg h3.icon-status-exception { background-image: url(../images/icons/notice-error.png) !important; color: red; }
+.notice-msg h3.icon-status-notice { background-image: url(../images/icons/notice-information.png) !important; color: black; }
+
+#g-tiptop{ background:#bd0a0a url(../images/logo.png) no-repeat 20px center;}
+#g-tiptop .x-toolbar-ct{ height:40px;}
+#g-tiptop .tiptop-btn-col{ margin-right:5px; color:#fff;}
+#g-tiptop .x-btn-text{ padding-top:0;}
+#g-tiptop .x-btn-mc em.x-btn-arrow{ background-image:url(../images/arrow.png);}
+
+#g-tiptop .x-btn-tr i, #g-tiptop .x-btn-tl i, #g-tiptop .x-btn-mr i, #g-tiptop .x-btn-ml i, #g-tiptop .x-btn-br i, #g-tiptop .x-btn-bl i{ display:none;}
+#g-tiptop .x-btn-tr, #g-tiptop .x-btn-tl, #g-tiptop .x-btn-mr, #g-tiptop .x-btn-ml, #g-tiptop .x-btn-br, #g-tiptop .x-btn-bl{ visibility:hidden; background:none;}
+#g-tiptop .x-btn-mc{ background:none;}
+#g-tiptop .x-btn-over .x-btn-tl,#g-tiptop .x-btn-over .x-btn-tc,#g-tiptop .x-btn-over .x-btn-tr{ visibility:hidden; background:none;}
+#g-tiptop .x-btn-over .x-btn-bl,#g-tiptop .x-btn-over .x-btn-bc,#g-tiptop .x-btn-over .x-btn-br{ visibility:hidden; background:none;}
+#g-tiptop td.x-btn-tl,#g-tiptop td.x-btn-tc,#g-tiptop td.x-btn-tr{ visibility:hidden; background:none;}
+#g-tiptop td.x-btn-bl,#g-tiptop td.x-btn-bc,#g-tiptop td.x-btn-br{ visibility:hidden; background:none;}
+#g-tiptop span.xtb-sep{ background-image:url(../images/grid-blue-split.png);}
+
+#ext-comp-1034{ margin-right:10px;}
+
+#g-tipbar{ padding:5px 0; background:#fff;}
+#g-tipbar .x-btn-mc em{ display:block; padding:5px 10px;}
+#g-tipbar .x-toolbar-cell{ padding:0 5px;}
+#g-tipbar .x-btn-mc em.x-btn-arrow{ background-position:right 38px;}
+#g-tipbar .x-btn-text-icon .x-btn-icon-medium-top .x-btn-text{ padding-top:30px;}

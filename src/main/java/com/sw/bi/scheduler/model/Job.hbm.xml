@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2011-12-19 14:42:39 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.sw.bi.scheduler.model.Job" table="job" >
+        <id name="jobId" type="long">
+            <column name="job_id" />
+            <generator class="increment" />
+        </id>
+        <property name="jobName" type="string">
+            <column name="job_name" length="100" not-null="true" unique="true" />
+        </property>
+        <property name="jobDesc" type="string">
+            <column name="job_desc" length="200" />
+        </property>
+        <property name="jobBusinessGroup" type="string">
+            <column name="job_business_group" length="200" />
+        </property>
+        <property name="programPath" type="string">
+            <column name="program_path" not-null="true" />
+        </property>
+        <property name="parameters" type="string">
+            <column name="parameters" />
+        </property>
+        <property name="dutyOfficer" type="long">
+            <column name="duty_officer" not-null="true" />
+        </property>
+        <property name="jobStatus" type="long">
+            <column name="job_status" not-null="true" />
+        </property>
+        <property name="cycleType" type="long">
+            <column name="cycle_type" not-null="true" />
+        </property>
+        <property name="dayN" type="java.lang.Long">
+            <column name="day_n" />
+        </property>
+        <property name="jobTime" type="string">
+            <column name="job_time" length="5" />
+        </property>
+        <property name="endTime" type="string">
+            <column name="end_time" length="5" />
+        </property>
+        <property name="jobLevel" type="long">
+            <column name="job_level" not-null="true" />
+        </property>
+        <property name="alert" type="long">
+            <column name="alert" not-null="true" />
+        </property>
+        <property name="jobType" type="long">
+            <column name="job_type" not-null="true" />
+        </property>
+        <property name="downReason" type="string">
+            <column name="down_reason" length="500" />
+        </property>
+        <property name="downTime" type="timestamp">
+            <column name="down_time" length="19" />
+        </property>
+        <property name="downMan" type="java.lang.Long">
+            <column name="down_man" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" not-null="true" />
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="update_time" length="19" />
+        </property>
+        <property name="updateBy" type="long">
+            <column name="update_by" />
+        </property>
+        <property name="prevJobs" type="string">
+            <column name="prev_jobs" length="100" />
+        </property>
+        <property name="gateway" type="string">
+            <column name="gateway" length="50" />
+        </property>
+        <property name="failureRerunTimes" type="java.lang.Integer">
+        	<column name="failure_rerun_times"/>
+        </property>
+        <property name="failureRerunInterval" type="java.lang.Integer">
+        	<column name="failure_rerun_interval"/>
+        </property>
+        <set name="tasks" table="task" inverse="true" lazy="true" fetch="select" cascade="delete">
+            <key>
+                <column name="job_id" not-null="true" />
+            </key>
+            <one-to-many class="com.sw.bi.scheduler.model.Task" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2011-12-19 14:42:39 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.sw.bi.scheduler.model.UserGroup" table="user_group" >
+        <id name="userGroupId" type="java.lang.Long">
+            <column name="user_group_id" />
+            <generator class="increment" />
+        </id>
+        <property name="parentId" column="parent_id" type="java.lang.Long" />
+        <property name="name" column="name" type="string" length="100" />
+        <property name="hiveDatabase" column="hive_database" type="string" length="200" />
+        <property name="hdfsPath" column="hdfs_path" type="string" length="1000" />
+        <property name="description" column="description" type="string" length="1000" />
+        <property name="sortNo" column="sort_no" type="int" />
+        <property name="administrator" column="administrator" type="boolean" />
+        <property name="active" type="boolean" column="active" not-null="true"/>
+        <property name="createTime" type="timestamp" column="create_time" not-null="true" />
+        <property name="updateTime" type="timestamp" column="update_time" />
+    </class>
+</hibernate-mapping>

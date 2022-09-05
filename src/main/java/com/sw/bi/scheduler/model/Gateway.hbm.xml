@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012-4-25 12:35:27 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.sw.bi.scheduler.model.Gateway" table="gateway">
+        <id name="gatewayId" type="java.lang.Long" column="gateway_id">
+            <generator class="increment" />
+        </id>
+        
+        <property name="name" type="string" column="name" length="50" not-null="true" />
+        <property name="ip" type="string" column="ip" length="50" not-null="true" />
+        <property name="port" type="int" column="port" />
+        <property name="userName" type="string" column="username" length="50" />
+        <property name="password" type="string" column="password" length="50" />
+        <property name="master" type="boolean" column="master" not-null="true" />
+        <property name="tailNumber" type="string" column="tail_number" length="20" />
+        <property name="description" type="string" column="description" length="200" />
+        <property name="status" type="int" column="status" length="1" not-null="true" />
+        <property name="hiveJdbc" type="string" column="hive_jdbc" length="200" />
+        
+        <property name="referToJobLevel" type="int" column="refer_to_job_level" not-null="true" />
+        <property name="taskRunningPriority" type="int" column="task_running_priority" not-null="true" />
+        <property name="referPointRandom" type="int" column="refer_point_random" not-null="true" />
+        <property name="taskFailReturnTimes" type="int" column="task_fail_return_times" not-null="true" />
+        <property name="taskRunningMax" type="int" column="task_running_max" />
+        <property name="waitUpdateStatusTaskCount" type="int" column="wait_update_status_task_count" />
+        <property name="taskCountExceptJobs" type="string" column="task_count_except_jobids" length="200" />
+        <property name="jobType" type="string" column="job_type" length="200" />
+        <property name="jobWhiteList" type="string" column="job_white_list" />
+        <property name="useWhiteList" type="boolean" column="use_white_list" />
+        <property name="disableSupplyHours" type="string" column="disable_supply_hours" length="200" />
+        <property name="schedulerWay" type="int" column="gateway_scheduler_way" length="1"/>
+        <property name="roundWay" type="int" column="round_way" length="1"/>
+        
+        <property name="createTime" type="timestamp" column="create_time" not-null="true"/>
+        <property name="updateTime" type="timestamp" column="update_time"/>
+    </class>
+</hibernate-mapping>

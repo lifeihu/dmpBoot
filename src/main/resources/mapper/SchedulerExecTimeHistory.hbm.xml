@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012-1-9 10:47:01 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.sw.bi.scheduler.model.SchedulerExecTimeHistory" table="scheduler_exec_time_history">
+        <id name="schedulerExecTimeHistoryId" type="java.lang.Long">
+            <column name="scheduler_exec_time_history_id" />
+            <generator class="increment" />
+        </id>
+        <property name="dateDesc" type="date">
+            <column name="date_desc" length="10" not-null="true" />
+        </property>
+        <property name="beginTime" type="timestamp">
+            <column name="begin_time" length="19" not-null="true" />
+        </property>
+        <property name="endTime" type="timestamp">
+            <column name="end_time" length="19" />
+        </property>
+        <property name="runTime" type="java.lang.Long">
+            <column name="run_time" />
+        </property>
+        <property name="finished" type="boolean">
+            <column name="finished" not-null="true" />
+        </property>
+        <property name="flag" type="string">
+            <column name="flag" not-null="true" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" not-null="true" />
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="update_time" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

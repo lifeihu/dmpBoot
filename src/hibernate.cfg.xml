@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory name="Goldilocks">
+        <property name="hibernate.dialect">org.hibernate.dialect.GoldilocksDialect</property>
+        <property name="hibernate.connection.driver_class">sunje.goldilocks.jdbc.GoldilocksDriver</property>
+        <!-- <property name="hibernate.connection.url">jdbc:mysql://192.168.181.96:3306/scheduler?Unicode=true&amp;characterEncoding=GBK</property>
+        <property name="hibernate.connection.username">hive_user</property>
+        <property name="hibernate.connection.password">abc#123</property> -->
+        <property name="hibernate.connection.url">jdbc:goldilocks://192.168.88.149:22581/gsdb</property>
+        <property name="hibernate.connection.username">tongjiu</property>
+        <property name="hibernate.connection.password">tongjiu</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="database.hbm2ddl.auto">create</property>
+        <mapping resource="Action.hbm.xml"/>
+        <mapping resource="ActionSql.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

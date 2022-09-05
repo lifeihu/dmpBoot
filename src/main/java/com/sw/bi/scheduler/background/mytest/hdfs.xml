@@ -1,0 +1,12 @@
+        <plugin  className="com.shunwang.datasync.plugins.HdfsPlugin">
+            <dataPath path="${datapath}"  dynamicPathResolvor="com.shunwang.datasync.path.resolvors.HdfsPathResolvor"/>
+            <property key="fs.default.name" value="hdfs://namenode:50001" />
+            <property key="file.type" value="${fileType}" />
+            <property key="read.delimiter" value='${delimiter}' />
+            <property key="write.delimiter" value='${delimiter}' />
+            <property key="charset.encoding" value="${charset}" />
+            <property key="column.count" value="${columns}" />
+            <property key="codec.class"  value="${codec}" />
+        </plugin>
+        
+        

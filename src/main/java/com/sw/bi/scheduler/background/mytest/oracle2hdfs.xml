@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<job readConcurrency="10" writeConcurrency="10"
+    errorThreshold="100">
+    <source>
+        <plugin className="com.shunwang.datasync.plugins.DBPlugin">
+            <dataPath path="select a,b,c from sys.t_test a"
+                dynamicPathResolvor="com.shunwang.datasync.path.resolvors.OracleSpliter">
+                <property key="max.limited.splitter" value="10" />
+                <property key="segment.name" value="t_test" />
+                <property key="owner" value="sys" />
+                <property key="partition.name" value="" />
+            </dataPath>
+            <property key="user" value="SYSTEM" />
+            <property key="password" value="E1AD9F9475A1C049CF480B0A2DEF2E62" />
+            <property key="connection.string" value="jdbc:oracle:thin:@192.168.1.2:1521:snda" />
+            <property key="driver.string"
+                value="oracle.jdbc.driver.OracleDriver" />
+            <property key="fetch.size" value="2000" />
+        </plugin>
+    </source>
+    <target>
+        <plugin
+            className="com.shunwang.datasync.plugins.RCFilePlugin">
+            <dataPath path="/group/test/${yyyy/MM/dd,-1d}/test.log" />
+            <property key="fs.default.name" value="hdfs://localhost:50000" />
+            <property key="charset.encoding" value="UTF-8" />
+            <property key="column.count" value="3" />
+            <property key="codec.class"
+                value="org.apache.hadoop.io.compress.GzipCodec" />
+        </plugin>
+    </target>
+</job>
+
+

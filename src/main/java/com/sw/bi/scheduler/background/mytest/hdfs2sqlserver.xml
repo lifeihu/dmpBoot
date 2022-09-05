@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<job readConcurrency="10" writeConcurrency="10"
+    errorThreshold="100">
+    <source>
+        <plugin
+            className="com.shunwang.datasync.plugins.RCFilePlugin">
+            <dataPath path="/group/user/root/meta/hive-temp-table/t_t3/pt=2011-10-20/"
+                dynamicPathResolvor="com.shunwang.datasync.path.resolvors.HdfsPathResolvor">
+                <property key="disable.recursive" value="false" />
+            </dataPath>
+            <property key="fs.default.name" value="hdfs://namenode:50001" />
+            <property key="ignored.columns" value="" />
+        </plugin>
+    </source>
+    <target>
+        <plugin className="com.shunwang.datasync.plugins.DBPlugin">
+            <dataPath path="INSERT INTO sqlserver_test.dbo.test (a,b,c,d)  values(?,?,?,?)"/>
+            <property key="user" value="sa" />
+            <property key="password"
+                value="6B815C4767A34C9FB2DC9DFEE426EEA1" />
+            <property key="charset.encoding" value="GBK" />
+            <property key="pre.processing.sql" value="delete from sqlserver_test.dbo.test" />
+            <property key="post.processing.sql" value="" />
+            <property key="connection.string" value="jdbc:sqlserver://115.231.234.152:1433;databaseName=sqlserver_test" />
+            <property key="driver.string"
+                value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+            <property key="commit.threshold" value="2000" />
+        </plugin>
+    </target>
+    <property key="plugin.coordinator"
+        value="com.shunwang.datasync.plugins.DBPluginCoordinator" />
+</job>
+

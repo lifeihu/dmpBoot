@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2011-12-19 14:42:39 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.sw.bi.scheduler.model.Action" table="action" >
+        <id name="actionId" type="long">
+            <column name="action_id" />
+            <generator class="increment" />
+        </id>
+        <property name="taskId" type="long">
+            <column name="task_id" not-null="true" />
+        </property>
+        <property name="jobId" type="long">
+            <column name="job_id" not-null="true" />
+        </property>
+        <property name="jobType" type="java.lang.Long">
+            <column name="job_type" />
+        </property>
+        <property name="settingTime" type="timestamp">
+            <column name="setting_time" length="19" />
+        </property>
+        <property name="startTime" type="timestamp">
+            <column name="start_time" length="19" not-null="true" />
+        </property>
+        <property name="endTime" type="timestamp">
+            <column name="end_time" length="19" />
+        </property>
+        <property name="actionStatus" type="int">
+            <column name="action_status" not-null="true" />
+        </property>
+        <property name="jobName" type="string">
+            <column name="job_name" length="100" not-null="true" />
+        </property>
+        <property name="cycleType" type="int">
+            <column name="cycle_type" />
+        </property>
+        <property name="taskDate" type="date">
+            <column name="task_date" length="10" not-null="true" />
+        </property>
+        <property name="scanDate" type="date">
+            <column name="scan_date" length="10" not-null="true" />
+        </property>
+        <property name="actionLog" type="string">
+            <column name="action_log" />
+        </property>
+        <property name="operator" type="string">
+            <column name="operator" length="100" not-null="true" />
+        </property>
+        <property name="gateway" type="string">
+            <column name="gateway" length="30" not-null="true" />
+        </property>
+        <property name="flag" type="int">
+            <column name="flag" not-null="true" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" not-null="true" />
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="update_time" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

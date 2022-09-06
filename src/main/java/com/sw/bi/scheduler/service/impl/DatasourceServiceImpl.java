@@ -293,7 +293,7 @@ public class DatasourceServiceImpl extends GenericServiceHibernateSupport<Dataso
 		}
 
 		Criteria criteria = this.createCriteria(model);
-		criteria.addOrder(Order.desc("active"));
+//		criteria.addOrder(Order.desc("active"));
 
 		if (/*!userService.isAdministrator(userId)*/userGroup.isAdministrator()) {
 			// 如果是非管理员用户则需要获得查看类型是所有的和创建者是自己的数据源

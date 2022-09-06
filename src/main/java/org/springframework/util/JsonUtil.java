@@ -8,17 +8,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonToken;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.type.TypeFactory;
+import framework.jackson.ExtendBeanDeserializerFactory;
 import org.apache.commons.beanutils.PropertyUtils;
-import org.codehaus.jackson.JsonGenerationException;
-import org.codehaus.jackson.JsonParseException;
-import org.codehaus.jackson.JsonParser;
-import org.codehaus.jackson.JsonToken;
-import org.codehaus.jackson.map.JsonMappingException;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.deser.StdDeserializerProvider;
-import org.codehaus.jackson.map.type.TypeFactory;
 import org.springframework.jackson.CustomDateFormat;
-import org.springframework.jackson.ExtendBeanDeserializerFactory;
 
 public class JsonUtil {
 	private static final String JSON_NULL = "null";
@@ -30,10 +29,6 @@ public class JsonUtil {
 
 	static {
 		mapper.setDateFormat(CustomDateFormat.getDateFormat());
-		mapper.getJsonFactory().configure(JsonParser.Feature.ALLOW_UNQUOTED_CONTROL_CHARS, true);
-
-		StdDeserializerProvider deserializerProvider = new StdDeserializerProvider(new ExtendBeanDeserializerFactory());
-		mapper.setDeserializerProvider(deserializerProvider);
 	}
 
 	/**

@@ -171,7 +171,7 @@ com.sw.bi.scheduler.application.LoginForm = Ext.extend(Ext.form.FormPanel, {
 				},
 				
 				success: function() {
-					form.el.dom.action = CONTEXT_PATH + '/j_spring_security_check';
+					form.el.dom.action = CONTEXT_PATH + '/manage/';
 					form.el.dom.submit();
 					
 					me.saveState();

@@ -192,8 +192,28 @@ public class PermissionServiceImpl extends GenericServiceHibernateSupport<Permis
 	private List<Resource> createResourceTree(List<Resource> resources) {
 		Resource root = new Resource();
 		Map<Long, Resource> mapping = new HashMap<Long, Resource>();
+
+		List<Resource> sortedResources = new ArrayList<>();
 		// 不同数据库对null的排序不同，做个兼容
 		for (Resource resource : resources) {
+			// 此处必须先将children置空,否则在下面调用getChildren方法时会把所有子节点加载出来
+
+			Resource parent = resource.getParent();
+			if (parent == null) {
+				sortedResources.add(resource);
+			}
+		}
+
+		for (Resource resource : resources) {
+
+			Resource parent = resource.getParent();
+			if (parent != null) {
+				sortedResources.add(resource);
+			}
+		}
+
+
+		for (Resource resource : sortedResources) {
 			// 此处必须先将children置空,否则在下面调用getChildren方法时会把所有子节点加载出来
 			resource.setChildren(new LinkedHashSet<Resource>());
 
@@ -203,20 +223,11 @@ public class PermissionServiceImpl extends GenericServiceHibernateSupport<Permis
 				parent.getChildren().add(resource);
 				mapping.put(resource.getResourceId(), resource);
 			}
-		}
-
-
-		for (Resource resource : resources) {
-			// 此处必须先将children置空,否则在下面调用getChildren方法时会把所有子节点加载出来
-			resource.setChildren(new LinkedHashSet<Resource>());
-
-			Resource parent = resource.getParent();
-			if (parent == null)
-				continue;
-			else
+			else {
 				parent = mapping.get(parent.getResourceId());
-			parent.getChildren().add(resource);
-			mapping.put(resource.getResourceId(), resource);
+				parent.getChildren().add(resource);
+				mapping.put(resource.getResourceId(), resource);
+			}
 		}
 
 		return new ArrayList<Resource>(root.getChildren());

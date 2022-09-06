@@ -6,13 +6,15 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<title>调度系统</title>
-	
+
 	<link href="<c:url value="/resources/ext/css/ext-all.css"/>" rel="stylesheet" type="text/css" />
 	<link href="<c:url value="/resources/css/css.css"/>" rel="stylesheet" type="text/css" />
-	
+
 	<script type="text/javascript">
+		CONTEXT_PATH = "";
+		SPRING_SECURITY_LAST_EXCEPTION_MESSAGE = "";
 	</script>
-	
+
 	<script type="text/javascript" src="<c:url value="/scripts/framework/framework.js"/>"></script>
 	<!-- <script type="text/javascript" src="<c:url value="/scripts/com/sw/bi/odps/manage/application/LoginForm.js"/>"></script> -->
 	<script type="text/javascript">
@@ -29,7 +31,7 @@
 			border-radius: 2px;
 			height: 21px;
 			padding: 2px 5px 2px 5px;
-			}
+		}
 		.btnLogin .x-btn-tl,.btnLogin .x-btn-tr,.btnLogin .x-btn-tc,.btnLogin .x-btn-ml,.btnLogin .x-btn-mr,.btnLogin .x-btn-mc,.btnLogin .x-btn-bl,.btnLogin .x-btn-br,.btnLogin .x-btn-bc{
 			background: none;}
 		#ext-gen20 {width:112px;
@@ -40,19 +42,19 @@
 			font-size: 16px;
 			border-radius: 3px;
 			padding: 2px 5px 2px 5px;margin-right: 100px;
-			}
+		}
 		.x-panel-tl,.x-panel-tr,  .x-panel-bl,  .x-panel-br,.x-panel-ml,.x-panel-mr,.x-panel-bc  {background:none;
 			border: none;}
 		html {
-			background: url("./resources/images/bg-login.jpg") no-repeat center center;
+			background: url("../resources/images/bg-login.jpg") no-repeat center center;
 			height: 100%;}
 		.x-form-invalid, textarea.x-form-invalid {
 			background: none;}
-		.bg-username {background: url(./resources/images/lg-user.png) right center no-repeat;}
-		.bg-mobile {background: url(./resources/images/lg-mobile.png) right center no-repeat;}
-		.bg-password {background: url(./resources/images/lg-pwd.png) right center no-repeat;}
-.x-btn-mc {
-	padding-top: 10px;}
+		.bg-username {background: url(../resources/images/lg-user.png) right center no-repeat;}
+		.bg-mobile {background: url(../resources/images/lg-mobile.png) right center no-repeat;}
+		.bg-password {background: url(../resources/images/lg-pwd.png) right center no-repeat;}
+		.x-btn-mc {
+			padding-top: 10px;}
 	</style>
 
 </head>

@@ -296,6 +296,7 @@ framework.modules.MaintainModule = Ext.extend(framework.core.Module, {
 		loadMask.msg = '正在加载数据, 请耐心等候...';
 		loadMask.show();
 
+		console.log('loadData', loadDataUrl)
 		Ext.Ajax.request({
 			url: loadDataUrl,
 			// waitMsg: '正在加载数据,请耐心等候...',

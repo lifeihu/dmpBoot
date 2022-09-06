@@ -2,8 +2,9 @@ package com.sw.bi.scheduler.model;
 
 // Generated 2011-12-19 14:42:39 by Hibernate Tools 3.4.0.CR1
 
-import org.codehaus.jackson.annotate.JsonIgnore;
-import org.codehaus.jackson.annotate.JsonSetter;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
 import java.util.Date;
 import java.util.LinkedHashSet;
@@ -27,6 +28,7 @@ public class User implements java.io.Serializable, AuthenticationUserGroup {
 	private Date createTime;
 	private Date updateTime;
 	private UserGroup userGroup;
+	@JsonIgnore
 	private Set<Role> roles = new LinkedHashSet<Role>();
 
 	public User() {}
@@ -152,7 +154,6 @@ public class User implements java.io.Serializable, AuthenticationUserGroup {
 		this.updateTime = updateTime;
 	}
 
-	@JsonIgnore
 	public Set<Role> getRoles() {
 		return roles;
 	}

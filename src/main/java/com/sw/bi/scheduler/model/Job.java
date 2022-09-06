@@ -2,9 +2,9 @@ package com.sw.bi.scheduler.model;
 
 // Generated 2011-12-19 14:42:39 by Hibernate Tools 3.4.0.CR1
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.apache.commons.beanutils.ConvertUtils;
-import org.codehaus.jackson.annotate.JsonIgnore;
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.springframework.util.StringUtils;
 
 import java.util.*;

@@ -196,10 +196,12 @@ public class GenericServiceHibernateSupport<T> extends HibernateDaoSupport imple
 		PaginationSupport paging = new PaginationSupport();
 
 		if (criteria != null) {
-			criteria.addOrder(Order.desc(getEntityId()));
+//
 			// 统计 记录总数
 			criteria.setProjection(Projections.rowCount());
-			paging.setTotal((Integer) criteria.uniqueResult());
+			paging.setTotal(Integer.valueOf(String.valueOf(criteria.uniqueResult())) );
+
+			criteria.addOrder(Order.desc(getEntityId()));
 
 			// 统计分页结果
 			criteria.setProjection(null);

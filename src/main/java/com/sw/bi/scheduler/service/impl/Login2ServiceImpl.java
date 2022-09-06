@@ -27,14 +27,13 @@ import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
 @Service
-public class LoginServiceImpl implements  UserDetailsService {
-	private static final Logger log = Logger.getLogger(LoginServiceImpl.class);
+public class Login2ServiceImpl{
+	private static final Logger log = Logger.getLogger(Login2ServiceImpl.class);
 
 	@Autowired
 	private UserService userService;
@@ -146,7 +145,6 @@ public class LoginServiceImpl implements  UserDetailsService {
 		return true;
 	}
 
-	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException, DataAccessException {
 		User user = userService.getUserByLoginName(username);
 

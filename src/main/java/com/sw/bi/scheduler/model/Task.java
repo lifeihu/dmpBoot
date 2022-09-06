@@ -2,11 +2,11 @@ package com.sw.bi.scheduler.model;
 
 // Generated 2011-12-23 15:16:52 by Hibernate Tools 3.4.0.CR1
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sw.bi.scheduler.util.Configure;
 import com.sw.bi.scheduler.util.Configure.JobCycle;
 import com.sw.bi.scheduler.util.Configure.TaskStatus;
 import com.sw.bi.scheduler.util.DateUtil;
-import org.codehaus.jackson.annotate.JsonIgnore;
 
 import java.util.Arrays;
 import java.util.Collection;

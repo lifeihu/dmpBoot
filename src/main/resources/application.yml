@@ -3,6 +3,8 @@ server:
   servlet:
     context-path: /
 spring:
+  aop:
+    proxy-target-class: true
   servlet:
     multipart:
       max-file-size: 500MB

@@ -550,7 +550,7 @@ public class JobServiceImpl extends GenericServiceHibernateSupport<Job> implemen
 		}
 
 		Criteria criteria = createCriteria(model);
-		criteria.addOrder(Order.desc("jobId"));
+//		criteria.addOrder(Order.desc("jobId"));
 
 		if (userIds != null) {
 			// 当选择了用户组时需要按用户组下的用户过滤作业

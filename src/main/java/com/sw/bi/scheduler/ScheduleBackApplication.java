@@ -51,6 +51,10 @@ public class ScheduleBackApplication implements ApplicationRunner {
 //            }
 //        }).start();
 
+        // 判断是不是网关机器
+        if (true) {
+            return;
+        }
         Collection<Gateway> gateways = gatewayService.queryAll();
         for (Gateway gateway : gateways) {
             SshUtil.registerAgent(gateway.getName(), gateway.getIp(), gateway.getPort());

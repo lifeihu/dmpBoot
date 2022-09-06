@@ -2,7 +2,9 @@ package com.sw.bi.scheduler.service;
 
 import com.sw.bi.scheduler.model.SchedulerExecTime;
 import com.sw.bi.scheduler.util.Configure;
+import org.springframework.transaction.annotation.Transactional;
 
+@Transactional(readOnly = false)
 public interface SchedulerExecTimeService extends GenericService<SchedulerExecTime> {
 
 	public static final String SCHEDULER_FLAG = Configure.property(Configure.GATEWAY);
@@ -28,6 +30,7 @@ public interface SchedulerExecTimeService extends GenericService<SchedulerExecTi
 	/**
 	 * 本次调度过程已经执行完毕
 	 */
+	@Transactional
 	public void finished();
 
 	/**

@@ -89,7 +89,7 @@ public class SchedulerExecTimeServiceImpl extends GenericServiceHibernateSupport
 		set.setUpdateTime(DateUtil.now());
 		set.setFinished(false);
 
-		update(set);
+		this.update(set);
 		flush();
 
 		schedulerExecTimeHistoryService.begin();

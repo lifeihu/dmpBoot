@@ -3,6 +3,8 @@ server:
   servlet:
     context-path: /
 spring:
+  aop:
+    proxy-target-class: true
   servlet:
     multipart:
       max-file-size: 500MB
@@ -33,3 +35,6 @@ spring:
       min-evictable-idle-time-millis: 300000
   jpa:
     database-platform: org.hibernate.dialect.GoldilocksDialect
+    properties:
+      hibernate:
+        current_session_context_class: org.springframwork.orm.hibernate5.SpringSessionContext

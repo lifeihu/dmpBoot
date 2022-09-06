@@ -14,13 +14,12 @@ import org.apache.commons.beanutils.ConvertUtils;
 import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.commons.beanutils.converters.DateConverter;
 import org.apache.log4j.Logger;
-import org.hibernate.Criteria;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+import org.hibernate.*;
 import org.hibernate.criterion.*;
 import org.hibernate.transform.ResultTransformer;
 import org.hibernate.type.StandardBasicTypes;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.orm.hibernate5.HibernateCallback;
@@ -29,6 +28,7 @@ import org.springframework.resolver.Warning;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.AuthenticationUserDetails;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ConditionExpression;
 import org.springframework.ui.ConditionModel;
 import org.springframework.ui.OrderBy;
@@ -36,6 +36,7 @@ import org.springframework.ui.PaginationSupport;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
+import javax.persistence.EntityManagerFactory;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
@@ -47,6 +48,9 @@ import java.util.regex.Pattern;
 @SuppressWarnings("unchecked")
 public class GenericServiceHibernateSupport<T> extends HibernateDaoSupport implements GenericService<T>, ApplicationContextAware {
 	protected static final Logger log = Logger.getLogger(GenericServiceHibernateSupport.class);
+
+	@Autowired
+	private EntityManagerFactory entityManagerFactory;
 
 	private ApplicationContext context;
 	protected Class<T> entityClass;
@@ -101,9 +105,10 @@ public class GenericServiceHibernateSupport<T> extends HibernateDaoSupport imple
 		});
 	}
 
+	// TODO: 这个不知道会不会有问题，先试下
 	@Override
 	public Session getCurrentSession() {
-		return currentSession();
+			return currentSession();
 	}
 
 	@Override
@@ -248,11 +253,12 @@ public class GenericServiceHibernateSupport<T> extends HibernateDaoSupport imple
 		getHibernateTemplate().merge(entity);
 	}
 
+	@Deprecated
 	@Override
 	public Criteria createCriteria() {
 		return getCurrentSession().createCriteria(entityClass);
 	}
-
+	@Deprecated
 	@Override
 	public Criteria createCriteria(ConditionModel model) {
 		return createCriteria(entityClass, model);

@@ -1,6 +1,7 @@
 package com.sw.bi.scheduler.service;
 
 import com.sw.bi.scheduler.model.User;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collection;
 
@@ -49,6 +50,7 @@ public interface UserService extends GenericService<User>/*, UserDetailsService*
 	 * @param loginName
 	 * @return
 	 */
+	@Transactional
 	public User getUserByLoginName(String loginName);
 
 }

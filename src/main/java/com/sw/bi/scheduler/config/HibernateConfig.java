@@ -26,6 +26,10 @@ public class HibernateConfig {
     @Autowired
     private DataSource dataSource;
 
+    private static final String AOP_POINTCUT_EXPRESSION = "execution (* com.sw.bi.schedule..*.service..*.*(..))";
+
+
+
     @Bean(name = "schedulerSessionFactory")
     public LocalSessionFactoryBean sessionFactoryBean() {
         log.info("执行sessionFactoryBean()");
@@ -61,7 +65,7 @@ public class HibernateConfig {
         HibernateTransactionManager transactionManager = new HibernateTransactionManager();
         transactionManager.setDataSource(dataSource);
         transactionManager.setSessionFactory(sessionFactoryBean().getObject()); // 注入sessionFactory
-        transactionManager.setHibernateManagedSession(true); // 获取当前session
+        transactionManager.setHibernateManagedSession(false); // 获取当前session
         transactionManager.setValidateExistingTransaction(true); // 开启事务校验
         transactionManager.setRollbackOnCommitFailure(true);
         transactionManager.setAutodetectDataSource(true);

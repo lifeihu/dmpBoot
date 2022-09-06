@@ -1,10 +1,11 @@
 package com.sw.bi.scheduler.background.main;
 
-import java.io.IOException;
 import java.util.Date;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
@@ -215,7 +216,13 @@ public class Scheduler {
 		Configure.property(Configure.GATEWAY, gateway);
 		// Configure.property(Configure.MAIN_SCHEDULER, "scheduler".equals(gateway));
 
-		Scheduler.getScheduler().schedule();
+		//获取SpringBoot容器
+		ConfigurableApplicationContext applicationContext= SpringApplication.run(Scheduler.class, args);
+
+		//从Spring容器中获取指定的对象
+		Scheduler scheduler=  applicationContext.getBean(Scheduler.class);
+
+		scheduler.schedule();
 	}
 }
 

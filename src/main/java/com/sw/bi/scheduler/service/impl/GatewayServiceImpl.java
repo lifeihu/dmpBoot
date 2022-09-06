@@ -252,12 +252,6 @@ public class GatewayServiceImpl extends GenericServiceHibernateSupport<Gateway> 
 		}
 	}
 
-	@Override
-	protected void initDao() throws Exception {
-		Collection<Gateway> gateways = this.queryAll();
-		for (Gateway gateway : gateways) {
-			SshUtil.registerAgent(gateway.getName(), gateway.getIp(), gateway.getPort());
-		}
-	}
+
 
 }

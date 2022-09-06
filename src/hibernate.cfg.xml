@@ -14,7 +14,5 @@
         <property name="hibernate.connection.password">tongjiu</property>
         <property name="hibernate.show_sql">true</property>
         <property name="database.hbm2ddl.auto">create</property>
-        <mapping resource="Action.hbm.xml"/>
-        <mapping resource="ActionSql.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

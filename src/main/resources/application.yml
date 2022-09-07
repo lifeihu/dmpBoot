@@ -3,6 +3,8 @@ server:
   servlet:
     context-path: /
 spring:
+  main:
+    allow-circular-references: true
   aop:
     proxy-target-class: true
   servlet:
@@ -35,6 +37,7 @@ spring:
       min-evictable-idle-time-millis: 300000
   jpa:
     database-platform: org.hibernate.dialect.GoldilocksDialect
+    open-in-view: false
     properties:
       hibernate:
         current_session_context_class: org.springframwork.orm.hibernate5.SpringSessionContext

@@ -20,7 +20,6 @@ public class VertifyCodeServiceImpl extends GenericServiceHibernateSupport<Verti
 		criteria.add(Restrictions.eq("mobile", mobile));
 		criteria.addOrder(Order.desc("createTime"));
 		criteria.setMaxResults(1);
-
 		return (VertifyCode) criteria.uniqueResult();
 	}
 

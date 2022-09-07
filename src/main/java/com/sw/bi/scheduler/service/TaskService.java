@@ -5,6 +5,7 @@ import com.sw.bi.scheduler.background.exception.SchedulerException;
 import com.sw.bi.scheduler.model.Action;
 import com.sw.bi.scheduler.model.Job;
 import com.sw.bi.scheduler.model.Task;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ConditionModel;
 import org.springframework.ui.PaginationSupport;
 
@@ -333,6 +334,7 @@ public interface TaskService extends GenericService<Task> {
 	 * @param limit
 	 * @return
 	 */
+	@Transactional
 	public PaginationSupport pagingBySql(ConditionModel cm);
 
 	/**

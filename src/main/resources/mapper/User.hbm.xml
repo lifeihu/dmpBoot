@@ -41,7 +41,7 @@
         <property name="updateTime" type="timestamp">
             <column name="update_time" length="19" />
         </property>
-        <set name="roles" inverse="false" lazy="true" table="user_role" cascade="persist,merge" fetch="select">
+        <set name="roles" inverse="false" lazy="false" table="user_role" cascade="persist,merge" fetch="select">
             <key>
                 <column name="user_id" not-null="true" />
             </key>

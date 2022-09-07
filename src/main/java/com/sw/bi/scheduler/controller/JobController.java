@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.*;
 
 @Controller
+@RequestMapping(value = "/manage/job")
 public class JobController extends BaseActionController<Job> {
 
 	@Autowired
@@ -46,7 +47,7 @@ public class JobController extends BaseActionController<Job> {
 	
 	private MessageSenderAssistant messageSender = new MessageSenderAssistant(new String[] { "scheduler.properties" });
 
-	@PostMapping(value = "/manage/job")
+	@PostMapping(value = "")
 	@ResponseBody
 	public Map execute(Long id) {
 		Map model = new HashMap();
@@ -77,7 +78,7 @@ public class JobController extends BaseActionController<Job> {
 	}
 
 	@Override
-	@RequestMapping("/manage/job/save")
+	@RequestMapping("/save")
 	public Job save(String[] childrenDataRoot) {
 		Job job = decode("job", Job.class);
 
@@ -135,7 +136,7 @@ public class JobController extends BaseActionController<Job> {
 	 * @param allowCascadeOnline
 	 *            是否允许级联上线
 	 */
-	@RequestMapping("/manage/job/online")
+	@RequestMapping("/online")
 	public void online(long jobId, Long updateBy, @RequestParam(required = false)
 	Boolean allowCascadeOnline) {
 		jobService.isAuthorizedUserGroup(jobService.get(jobId), OperateAction.ONLINE);
@@ -150,7 +151,7 @@ public class JobController extends BaseActionController<Job> {
 	 * 
 	 * @param jobId
 	 */
-	@RequestMapping("/manage/job/batchOnline")
+	@RequestMapping("/batchOnline")
 	public void batchOnline(String jobId) {
 		Long[] jobIds = (Long[]) ConvertUtils.convert(jobId.split(","), Long.class);
 
@@ -176,7 +177,7 @@ public class JobController extends BaseActionController<Job> {
 	 * @param downReason
 	 *            下线原因
 	 */
-	@RequestMapping("/manage/job/offline")
+	@RequestMapping("/offline")
 	public void offline(String jobIds, Long downMan, Date downTime, String downReason) {
 		Long[] jobId = (Long[]) ConvertUtils.convert(jobIds.split(","), Long.class);
 
@@ -197,7 +198,7 @@ public class JobController extends BaseActionController<Job> {
 	 * @param depth
 	 * @return
 	 */
-	@RequestMapping("/manage/job/children")
+	@RequestMapping("/children")
 	@ResponseBody
 	public Collection<Job> getOnlineDepthChildrenJobsToCollection(long jobId, Integer depth) {
 		return jobRelationService.getOnlineDepthChildrenJobsToCollection(jobId, depth);
@@ -209,7 +210,7 @@ public class JobController extends BaseActionController<Job> {
 	 * @param jobId
 	 * @return
 	 */
-	@RequestMapping("/manage/job/getFrontJobs")
+	@RequestMapping("/getFrontJobs")
 	@ResponseBody
 	public Collection<Job> getOnlineFrontJobs(long rearJobId) {
 		return jobService.getFrontJobs(rearJobId);
@@ -221,7 +222,7 @@ public class JobController extends BaseActionController<Job> {
 	 * @param rearJobId
 	 * @return
 	 */
-	@RequestMapping("/manage/job/getRearJobs")
+	@RequestMapping("/getRearJobs")
 	@ResponseBody
 	public Collection<Job> getOnlineRearJobs(long rearJobId) {
 		return jobService.getRearJobs(rearJobId);
@@ -234,7 +235,7 @@ public class JobController extends BaseActionController<Job> {
 	 * @param jobId
 	 * @return
 	 */
-	@RequestMapping("/manage/job/allowCreateTasks")
+	@RequestMapping("/allowCreateTasks")
 	@ResponseBody
 	public boolean allowCreateTasks(Date taskDate, String jobId) {
 		Long[] jobIds = null;
@@ -253,7 +254,7 @@ public class JobController extends BaseActionController<Job> {
 	 * @param jobId
 	 * @throws SchedulerException
 	 */
-	@RequestMapping("/manage/job/createTasks")
+	@RequestMapping("/createTasks")
 	@ResponseBody
 	public PaginationSupport createTasks(Date taskDate, @RequestParam(required = false)
 	String jobId) throws SchedulerException {
@@ -302,7 +303,7 @@ public class JobController extends BaseActionController<Job> {
 	 * 
 	 * @return
 	 */
-	@RequestMapping("/manage/job/getOnlinePrevJobIds")
+	@RequestMapping("/getOnlinePrevJobIds")
 	@ResponseBody
 	public Collection<Long> getOnlinePrevJobIds() {
 		return jobService.getOnlineFrontJobIds();
@@ -314,7 +315,7 @@ public class JobController extends BaseActionController<Job> {
 	 * @param dataSourceId
 	 * @return
 	 */
-	@RequestMapping("/manage/job/getJobsByDataSource")
+	@RequestMapping("/getJobsByDataSource")
 	@ResponseBody
 	public Collection<Job> getJobsByDataSource(long dataSourceId) {
 		return jobService.getJobsByDataSource(dataSourceId);
@@ -330,7 +331,7 @@ public class JobController extends BaseActionController<Job> {
 	 * @param dataSourceId
 	 * @return
 	 */
-	@RequestMapping("/manage/job/remove")
+	@RequestMapping("/remove")
 	@ResponseBody
 	public void remove(String id) {
 		  if (!StringUtils.hasText(id)) {

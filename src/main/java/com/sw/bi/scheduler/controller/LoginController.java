@@ -58,11 +58,8 @@ public class LoginController {
 	@RequestMapping("/mobile")
 	@ResponseBody
 	public String getUserMobiles(String username) {
-		User user = userService.getUserByLoginName("admin");
-		User user1 = new User();
-		user1.setUserName("test");
-		userService.save(user1);
-		return "1335555555";
+		User user = userService.getUserByLoginName(username);
+		return user.getMobilePhone();
 	}
 
 	/**
